@@ -10,7 +10,7 @@
 		https://www.toptal.com/designers/subtlepatterns/thumbnail-view/
 */
 	    html, body	{margin:0; padding:0; width: 100vw; height: 100vh; overflow: hidden;}	/* Set Body = Viewport */
-		      body  {background: center repeat url('./bo_play_pattern.png');}				/* (optionally) set a body background */
+		      body  {background: center repeat url('https://elusien.co.uk/shotcut/webvfx/bo_play_pattern.png');}				/* (optionally) set a body background */
 /*
 	IMPORTANT:	Centre the <section> by using viewport units only ('vw' and 'vh')
 				and make sure that both 'width' plus 2 x right-margin and
@@ -22,7 +22,7 @@
 /*	IMPORTANT:	Make the #slides <div> the same size as the <section> */
 
 		#slides		{top: 0; left: 0; height: 90vh; width: 90vw;
-					 background:  url('./pull_focus_bg.jpg') center #666;}
+					 background:  url('https://elusien.co.uk/shotcut/webvfx/pull_focus_bg.jpg') center #666;}
 /*
 	IMPORTANT:	You can add a border (e.g. white to make it look like a printed photo)
 				and a margin, if you like, but:
@@ -57,5 +57,12 @@
 		</div>
 	</section>
 </body>
-<script src="WebVfx.js"></script> <!-- Use Elusien's WebVfx framework (www.elusien.co.uk/shotcut) -->
+<script src="../WebVfx.js"></script> <!-- Use Elusien's WebVfx framework (www.elusien.co.uk/shotcut) -->
+<script>
+function syncframe(time, browser, frame_number, frame_rate) {
+    Elusien.frame_busy=1
+    console.log(frame_number,Elusien.niters)
+}
+webvfx_add_to_frame = [syncframe];
+</script>
 </html>

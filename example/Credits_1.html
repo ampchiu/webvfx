@@ -60,10 +60,17 @@
 		</p>
     </div>
 </body>
-<script src="webvfx.js"></script>
+<script src="../WebVfx.js"></script>
+<script>
+function syncframe(time, browser, frame_number, frame_rate) {
+    Elusien.frame_busy=1
+    console.log(frame_number,Elusien.niters)
+}
+</script>
+
 <script>
 	
-	webvfx_add_to_frame = [scroll];	// Tells Elusien's WebVfx framework to run the "scroll" routine for each frame.
+	webvfx_add_to_frame = [scroll,syncframe];	// Tells Elusien's WebVfx framework to run the "scroll" routine for each frame.
 
 	SC = {					// SC (Scrolling Cedits) has to be of GLOBAL scope
 		credits       : {},

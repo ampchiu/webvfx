@@ -22,7 +22,7 @@ func main() {
 	)
 	defer cancel()
 
-	_, _ = exec.Command(`sh`, `tmtmp.sh`).Output()
+	_, _ = exec.Command(`sh`, `rmtmp.sh`).Output()
 
 	gotExp := make(chan bool, 1)
 	chromedp.ListenTarget(ctx, func(ev interface{}) {

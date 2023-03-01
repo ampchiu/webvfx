@@ -58,5 +58,12 @@
 		</table>
 	</div>
 </body>
-<script src='./webvfx.js'></script>
+<script src="../WebVfx.js"></script>
+<script>
+function syncframe(time, browser, frame_number, frame_rate) {
+    Elusien.frame_busy=1
+    console.log(frame_number,Elusien.niters)
+}
+webvfx_add_to_frame = [syncframe];
+</script>
 </html>
