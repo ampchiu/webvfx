@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css?family=Audiowide|Iceland" rel="stylesheet">
+<!-- WebVfx does not recognise Google web fonts in "<link>", so make sure you also have the font downloaded on your computer. -->
+<title>Intro</title>
+<style>
+    html, body	{margin:0; padding:0; width: 100%; height: 100%; overflow: hidden;}
+	table		{
+/*				 width: 640px; height: 480px;	/*for a screen resolution of 640 x 480 */
+				 width: 100% ; height: 100% ;
+				 overflow        : 	hidden; border: solid 1px #ffffff;
+				 background-color:	#222222;
+				 background      :	repeating-linear-gradient(45deg, #303030 0%, #303030 10%, #202020 0%, #202020 50%) 0 / 15px 15px;
+				}
+	td			{text-align	: center; vertical-align: middle;}
+	#elent		{
+				 width		:	100%;
+				 font-size	:	100px;
+				 font-family:	'Iceland', cursive;
+				 font-weight: 	bolder;
+				 color		:	#228DFF;
+				 text-shadow:	0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+				 opacity	:	0;
+	}
+	#presents	{
+				 width			  :	100%;
+				 font-size		  :	35px;
+				 color			  :	#aaa;
+				 font-family	  :	Helvetica, Arial, sans-serif;
+				 -webkit-transform: scale(0, 0) rotate(-180deg);
+				    -moz-transform: scale(0, 0) rotate(-180deg);
+				         transform: scale(0, 0) rotate(-180deg);
+	}
+	#title		{
+				 width		:	100%;
+				 font-size	:	50px;
+				 font-family:	'Audiowide', cursive;
+				 color		:   #00f;
+				 opacity	:	0;
+*/				 text-shadow:	1px 1px 0 #aaaaaa;
+	}
+	
+</style>
+</head>
+<body data-control='10:30'>
+	
+<!--
+	================================================
+	        A SHOTCUT Overlay HTML Filter
+			-----------------------------
+	The "presentation" title screen for home movies.
+	================================================
+-->
+
+	<table><tr><td>
+		<p	class='webvfx' id='elent'
+			data-animate='{ease: "easeInSine",
+							  0%: {opacity:  0.15;},
+						    100%: {opacity:  1   ;}
+						  }'
+		 >
+			Elusien Entertainment
+		</p>
+		<p class='webvfx' id='presents'
+		    data-animate='{start: 0.3, end: 0.5, ease: "easeInOutCirc",
+							  0%: {webkitTransform: scale(0  , 0  ) rotate(-180deg);},
+						     50%: {webkitTransform: scale(0.5, 0.5) rotate( -90deg);},
+						    100%: {webkitTransform: scale(1  , 1  ) rotate(   0deg);}
+						  }'
+		 >
+			Presents
+		</p>
+		<p class='webvfx' id='title'
+			data-animate='{start: 0.6, end: 1.0, ease: "linearTween",
+							  0%: {color:  #0000ff; opacity:  0.15;},
+							 50%: {color:  #ff9966; opacity:  1   ;},
+							100%: {color:  #99ff99; opacity:  1   ;}
+						  }'
+		 >
+			An intro produced using<br>
+			Elusien's WebVfx framework for<br>
+			<b><u>MLT-SHOTCUT</u></b>
+		</p>
+	</td></tr></table>
+</body>
+<script src="WebVfx.js"></script>
+</html>

@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Slideshow</title>
+	<style>
+/*
+	The body background pattern (a sort of black metallic mesh) is courtesy of:
+		https://www.toptal.com/designers/subtlepatterns/thumbnail-view/
+*/
+	    html, body	{margin:0; padding:0; width: 100vw; height: 100vh; overflow: hidden;}	/* Set Body = Viewport */
+		      body  {background: center repeat url('./bo_play_pattern.png');}				/* (optionally) set a body background */
+/*
+	IMPORTANT:	Centre the <section> by using viewport units only ('vw' and 'vh')
+				and make sure that both 'width' plus 2 x right-margin and
+				'height' plus 2 x bottom-margin = 100
+*/
+		section		{position: relative; top: 0; left: 0; overflow: hidden;
+					 width: 90vw; height: 90vh; margin: 5vh 5vw; padding: 0;}
+					 
+/*	IMPORTANT:	Make the #slides <div> the same size as the <section> */
+
+		#slides		{top: 0; left: 0; height: 90vh; width: 90vw;
+					 background:  url('./pull_focus_bg.jpg') center #666;}
+/*
+	IMPORTANT:	You can add a border (e.g. white to make it look like a printed photo)
+				and a margin, if you like, but:
+				MAKE SURE THE UNITS ARE ONLY 'px', NOT 'vw/vh' or '%'.
+				(This is due to an MLT deficiency)
+*/				
+		img         {display: none; border: solid 10px #fff; margin: 2px;}
+	</style>
+</head>
+<body>
+	
+<!--
+	============================================================================
+	        A SHOTCUT Overlay HTML Filter using Elusien's WebVfx framework
+			--------------------------------------------------------------
+					                  Slideshow
+	============================================================================
+-->
+	<section>
+		<div id='slides' data-control='60:30' class='webvfx' data-slideshow='{
+			duration: 25% , type: splitting, from: "left", magnify: 25%, blur: 50, ease: easeInOutSine}'>
+			<img src='http://mhcommittee.elusien.co.uk/images/home.jpg'                                  >
+			<img src='http://mhcommittee.elusien.co.uk/images/home_1.jpg'                                >
+			<img src='http://mhcommittee.elusien.co.uk/images/Melamine-wood-002.png'                     >
+			<img src='http://mhcommittee.elusien.co.uk/images/Melamine-wood-003.png'                     >
+			<img src='http://mhcommittee.elusien.co.uk/images/home_2.jpg'                                >
+			<img src='http://mhcommittee.elusien.co.uk/images/home.jpg'                                  >
+		    <img src='http://trips.elusien.co.uk/2017c-New_Zealand/images/Day10a+Gannet_Colony.JPG'      >                                              
+		    <img src='http://trips.elusien.co.uk/2017c-New_Zealand/images/Day10b+Gannets.JPG'            >
+		    <img src='http://trips.elusien.co.uk/2017c-New_Zealand/images/Day10d+Bethells_Beach_Cave.JPG'>
+		    <img src='http://trips.elusien.co.uk/2017c-New_Zealand/images/Day10e+Karakare_Falls.JPG'     >
+		</div>
+	</section>
+</body>
+<script src="WebVfx.js"></script> <!-- Use Elusien's WebVfx framework (www.elusien.co.uk/shotcut) -->
+</html>

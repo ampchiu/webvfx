@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Audiowide|Iceland" rel="stylesheet">
+<!-- WebVfx does not recognise Google web fonts in "<link>", so make sure you also have the font downloaded on your computer. -->
+<title>Stopwatch</title>
+<style>
+	body {margin: 0; width: 100%; height: 100%; overflow: hidden; background-color: #000;}
+	body * {
+		color:#fff;	font-family: 'Iceland', monospace; font-size: 30px;
+	}
+	#wanderer {
+	    width: 150px; height: 150px;
+	    background-color: #f00;
+	    position: relative;
+		z-index: -1;
+		display: table-cell; 
+		vertical-align: middle;
+	}
+	#wanderer>p	{text-align: center;}
+/*		position: absolute; left: 50%; top:50%; font-size: 0.8em; text-align: center;
+				         transform: perspective(1px) translate(-50%, -50%);
+				 -webkit-transform: perspective(1px) translate(-50%, -50%);
+	}*/
+	[data-stopwatch]>span {
+		display: inline-block;
+		border: solid 1px #f00;
+		padding: 2px; margin: 2px 0;
+	}
+	#middle {
+		position: absolute;
+		top:      50%; left:     50%;
+				transform: perspective(1px) translate(-50%, -50%);
+		-webkit-transform: perspective(1px) translate(-50%, -50%);
+	}
+</style>
+</head>
+
+<body data-control='20:30'>
+	<div id='wanderer' class='webvfx'
+		 data-animate='{start: 0.1, end: 1.0, ease: "easeInOutBounce",
+					       0%: {backgroundColor: #f00; left:  0px; top:  0px; borderRadius:  0%;},
+					      25%: {backgroundColor: #00f; left:100px; top:  0px; borderRadius: 50%;},
+						  50%: {backgroundColor: #0f0; left:200px; top:200px; borderRadius:  0%;},
+						  75%: {backgroundColor: #f0f; left:  0px; top:200px; borderRadius: 50%;},
+						 100%: {backgroundColor: #ff0; left:100px; top:  0px; borderRadius:  0%;}
+					   }'>
+		<p>WANDERER</p>
+	</div>
+	
+	<div class='webvfx'
+		 data-stopwatch='{start: 0.2, end: 0.8,
+							10%: {pause;},
+							20%: {resume;},
+							40%: {pause;},
+							60%: {resume: skip;},
+							80%: {pause;},
+							90%: {resume: 100000;}
+						 }'>
+		Frame <span>0</span> => </span><span>00</span>h <span>00</span>m <span>00</span>s <span>000</span>ms
+	</div>
+	
+	<div class='webvfx' data-stopwatch=''>
+	   <span>0</span> => <span></span><span>00</span>:<span>00</span>.<span>000</span>
+	</div>
+	
+	<div id='middle' class="webvfx" data-stopwatch=''>						
+	   <span>9000</span> => <span></span><span>08</span>:<span>10</span><span></span>
+	</div>
+	
+	<p>	Assuming a framerate of 30fps. </p>
+</body>
+
+<script src="WebVfx.js"></script>
+</html>

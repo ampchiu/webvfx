@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Subtitles</title>
+	<style>
+	    html, body	{margin:0; padding:0; width: 100vw; height: 100vh; background-color: transparent; overflow: hidden; border: solid 1px #000;}
+		#st1		{position: absolute;  width: 90vw; left: 0; top: 0   ; margin: 1vh 0 1vh 5vw; padding: 0.25em;
+					 background-color: rgba(0, 0, 0, 0.5);
+					 font: 18px Open Sans Condensed, Liberation Sans, Arial, sans-serif; color: #fff;
+					 text-shadow: -1px -1px 0 #444, 1px -1px 0 #444, -1px 1px 0 #444, 1px 1px 0 #444;
+					 text-align: center; border-radius: 0.5em;
+					}
+		#st2    	{position: absolute;  width: 100vw; left: 0; bottom: 0; margin: 1vh 0 1vh 5vw; padding: 0.25em;
+					 background-color: transparent;
+					 font: 18px Open Sans Condensed, Liberation Sans, Arial, sans-serif; color: #fff;
+					 text-shadow: -1px -1px 0 #444, 1px -1px 0 #444, -1px 1px 0 #444, 1px 1px 0 #444;
+					 text-align: center; border-radius: 0.5em; letter-spacing: 2px;
+					}
+	</style>
+</head>
+<body data-control='40:30'>
+	The subtitles appear at the top (#srt1) of the screen and also at the bottom (#srt2).
+	<div id='st1' class='webvfx' data-subtitles='subtitles'></div>
+	<div id='st2' class='webvfx' data-subtitles='subtitles'></div>
+	<pre id='subtitles'>
+1
+00:00:04,000 --> 00:00:15,400
+This is the 1st subtitle 04sec to 15.4sec
+Mary had a little lamb,
+its <i>fleece</i> was white as snow
+and everywhere that Mary went
+that <b>lamb</b> was sure to go!
+
+2
+00:00:16,600 --> 00:00:25,800
+This is the 2nd subtitle 16.6sec to 25.8sec
+
+3
+00:00:20,600 --> 00:00:23,800
+This is the 3rd subtitle 20.6sec to 23.8sec
+
+4
+00:00:24,600 --> 00:00:30,800
+This is the 4th subtitle 24.6sec to 30.8sec
+
+</pre>
+</body>
+<script src='./webvfx.js'></script>
+</html>

@@ -1,0 +1,301 @@
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bounville</title>
+<style>
+body {
+background-color: powderblue;
+}
+div {overflow: visible; font-family: arial; opacity: 0; position: absolute;
+/*				 text-shadow: 0 0 12px #222; */
+				 text-shadow:	0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+	}
+		
+		#letter01 {
+		font-size:200px;
+		color:blue;
+/*		animation: fadeindrop01 1.5s ease forwards 1s,
+		moveright01 2s ease forwards 2.6s ;*/
+		}
+		
+		
+		@keyframes fadeindrop01 {
+0%   { opacity:0; left:370px; top:-100px;}
+100% {opacity:1; left:370px; top:210px; }
+}
+
+		@keyframes moveright01 {
+0%   {left:370px; top:210px;}
+100% {left:410px; top:210px; }
+		}
+
+#letter02 {
+		font-size:150px;
+		color:green;
+/*		animation: fadeinup02 1s ease forwards 1.1s,
+		moveright02 1s ease forwards 2.2s ; */
+		}
+		
+		@keyframes fadeinup02 {
+0%   {opacity:0; left:580px; top:500px;}
+100% {opacity:1; left:580px; top:250px;}
+}
+
+		@keyframes moveright02 {
+0%   {left:580px; top:250px;}
+100% {left:540px; top:250px;}
+}
+
+#letter03 {
+		font-size:150px;
+		color:orange;
+/*		animation: fadeindown03 1s ease forwards 1.3s,
+		moveright03 1s ease forwards 2.4s ; */
+		}
+		
+		@keyframes fadeindown03 {
+0%   {opacity:0; left:700px; top:50px;}
+100% {opacity:1; left:700px; top:250px;}
+}
+
+		@keyframes moveright03 {
+0%   {left:700px; top:250px;}
+100% {left:620px; top:250px;}
+}
+
+#letter04 {
+		font-size:150px;
+		color:grey;
+/*		animation: fadeindown04 1.3s ease forwards 2.6s,
+		moveright04 1.6s ease forwards 4s ; */
+		}
+		
+		@keyframes fadeindown04 {
+0%   {opacity:0; left:680px; top:230px;}
+100% {opacity:1; left:700px; top:250px;}
+}
+
+		@keyframes moveright04 {
+0%   {left:700px; top:250px;}
+100% {left:700px; top:250px;}
+}
+
+#letter05 {
+		font-size:150px;
+		color:red;
+		z-index: 2;
+/*		animation: fadeindown05 2s ease forwards 2.8s,
+		moveright05 1.5s ease forwards 4.9s ; */
+		}
+		
+		@keyframes fadeindown05 {
+0%   {opacity:0; left:750px; top:300px;}
+100% {opacity:1; left:750px; top:250px;}
+}
+
+		@keyframes moveright05 {
+0%   {left:750px; top:250px;}
+100% {left:750px; top:250px;}
+}
+
+#letter06 {
+		font-size:400px;
+		color:#b3b3ff;
+		z-index:1;
+/*		animation: fadeindown06 1s ease forwards 3.5s; */
+		
+		}
+		
+		@keyframes fadeindown06 {
+0%   {opacity:0; left:770px; top:60px;}
+100% {opacity:1; left:770px; top:80px;}
+}
+
+#letter07 {
+		font-size:150px;
+		color:blue;
+		z-index:2;
+/*		animation: fadeindown07 2s ease forwards 4s,
+		moveright07 1s ease forwards 8s ; */
+		}
+		
+		@keyframes fadeindown07 {
+0%   {opacity:0; left:900px; top:250px;}
+100% {opacity:1; left:900px; top:250px;}
+}
+
+		@keyframes moveright07 {
+0%   {left:900px; top:250px;}
+100% {left:900px; top:250px;}
+}
+
+#letter08 {
+		font-size:150px;
+		color:green;
+		z-index:2;
+/*		animation: fadeindown08 2s ease forwards 4.2s,
+		moveright08 1s ease forwards 8s ; */
+		}
+		
+		@keyframes fadeindown08 {
+0%   {opacity:0; left:930px; top:250px;}
+100% {opacity:1; left:930px; top:250px;}
+}
+
+		@keyframes moveright08 {
+0%   {left:930px; top:250px;}
+100% {left:930px; top:250px;}
+}
+
+
+#letter09 {
+		font-size:150px;
+		color:grey;
+		z-index:2;
+/*		animation: fadeindown09 2s ease forwards 4.4s;
+		moveright09 1s ease forwards 8s ;*/
+		}
+		
+		@keyframes fadeindown09 {
+0%   {opacity:0; left:960px; top:250px;}
+100% {opacity:1; left:960px; top:250px;}
+}
+
+		@keyframes moveright09 {
+0%   {left:960px; top:250px;}
+100% {left:960px; top:250px;}
+}
+
+#letter10 {
+		font-size:150px;
+		color:red;
+		z-index:2;
+/*		animation: fadeindown10 2s ease forwards 4.6s; */
+}
+		
+		@keyframes fadeindown10 {
+0%   {opacity:0; left:990px; top:250px;}
+100% {opacity:1; left:990px; top:250px;}
+}
+
+#line01 {
+        width:390px;
+		height:4px;
+		background-color: grey;
+		top:410px;
+		left:430px;
+/*		animation: justfade01 2s ease forwards 5s; */
+}
+		
+		@keyframes justfade01 {
+0%   {opacity:0; }
+100% {opacity:1;}
+}
+
+#line02 {
+		width:130px;
+		height:4px;
+		background-color: grey;
+		top:410px;
+		left:920px;
+/*		animation: justfade02 2s ease forwards 5.1s; */
+}
+
+		@keyframes fadeindrop01 {
+0%   { opacity:0; left:370px; top:-100px;}
+100% {opacity:1; left:370px; top:210px; }
+}
+
+		@keyframes moveright01 {
+0%   {left:370px; top:210px;}
+100% {left:410px; top:210px; }
+
+
+</style>
+</head>
+<body>
+<div id="letter01" class='webvfx' data-animate='{start: 0.1, end: 0.25, ease: "easeInOutBounce",
+	  0% : {opacity:0; left:370px; top:-100px;},
+	100% : {opacity:1; left:370px; top:210px;}
+}'
+		data-animate2='{start: 0.26, end: 0.46, ease: "easeInOutBounce",
+	  0% : {left:370px; top:210px;},
+	100% : {left:410px; top:210px;}
+}'>B</div>
+<div id="letter02" class='webvfx' data-animate='{start: 0.11, end: 0.21, ease: "easeInOutBounce",
+	  0% : {opacity:0; left:580px; top:500px;},
+	100% : {opacity:1; left:580px; top:250px;}
+}'
+		data-animate2='{start: 0.22, end: 0.32, ease: "easeInOutBounce",
+	  0% : {left:580px; top:250px;},
+	100% : {left:540px; top:250px;}
+}'>o</div>
+<div id="letter03" class='webvfx' data-animate='{start: 0.13, end: 0.23, ease: "easeInOutBounce",
+	  0% : {opacity:0; left:700px; top:50px;},
+	100% : {opacity:1; left:700px; top:250px;}
+}'
+		data-animate2='{start: 0.24, end: 0.34, ease: "easeInOutBounce",
+	  0% : {left:700px; top:250px;},
+	100% : {left:620px; top:250px;}
+}'>u</div>
+<div id="letter04" class='webvfx' data-animate='{start: 0.26, end: 0.39, ease: "easeInOutBounce",
+	  0% : {opacity:0; left:680px; top:230px;},
+	100% : {opacity:1; left:700px; top:250px;}
+}'
+		data-animate2='{start: 0.4, end: 0.56, ease: "easeInOutBounce",
+	  0% : {left:700px; top:250px;},
+	100% : {left:700px; top:250px;}
+}'>r</div>
+<div id="letter05" class='webvfx' data-animate='{start: 0.28, end: 0.48, ease: "easeInOutBounce",
+	  0% : {opacity:0; left:750px; top:300px;},
+	100% : {opacity:1; left:750px; top:250px;}
+}'
+		data-animate2='{start: 0.49, end: 0.64, ease: "easeInOutBounce",
+	  0% : {left:750px; top:250px;},
+	100% : {left:750px; top:250px;}
+}'>n</div>
+<div id="letter06" class='webvfx' data-animate='{start: 0.25, end: 0.45, ease: "easeInOutBounce",
+	  0% : {opacity:0; left:770px; top:60px;},
+	100% : {opacity:1; left:770px; top:80px;}
+}'>v</div>
+<div id="letter07" class='webvfx' data-animate='{start: 0.4, end: 0.6, ease: "easeInOutBounce",
+	  0% : {opacity:0; left:900px; top:250px;},
+	100% : {opacity:1; left:900px; top:250px;}
+}'
+		data-animate2='{start: 0.1, end: 0.9, ease: "easeInOutBounce",
+	  0% : {left:900px; top:250px;},
+	100% : {left:900px; top:250px;}
+}'>i</div>
+<div id="letter08" class='webvfx' data-animate='{start: 0.46, end: 0.66, ease: "easeInOutBounce",
+	  0% : {opacity:0; left:930px; top:250px;},
+	100% : {opacity:1; left:930px; top:250px;}
+}'
+		data-animate2='{start: 0.1, end: 0.9, ease: "easeInOutBounce",
+	  0% : {left:930px; top:250px;},
+	100% : {left:930px; top:250px;}
+}'>l</div>
+<div id="letter09" class='webvfx' data-animate ='{start: 0.44, end: 0.64, ease: "easeInOutBounce",
+      0% : {opacity:0; left:960px; top:250px;},
+    100% : {opacity:1; left:960px; top:250px;}
+}'
+		data-animate2='{start: 0.8, end: 0.9, ease: "easeInOutBounce",
+	  0% : {left:960px; top:250px;},
+	100% : {left:960px; top:250px;}
+}'>l</div>
+<div id="letter10" class='webvfx' data-animate ='{start: 0.56, end: 0.76, ease: "easeInOutBounce",
+      0% : {opacity:0; left:990px; top:250px;},
+    100% : {opacity:1; left:990px; top:250px;}
+}'>e</div>
+<div id="line01" class='webvfx' data-animate='{start: 0.5, end: 0.7, ease: "easeInOutBounce",
+	  0% : {opacity:0;},
+	100% : {opacity:1;}
+}'></div>
+<div id="line02" class='webvfx' data-animate='{start: 0.51, end: 0.71, ease: "easeInOutBounce",
+	  0% : {opacity:0;},
+	100% : {opacity:1;}
+}'></div>
+
+</body>
+<script src="WebVfx.js"></script>
+</html>

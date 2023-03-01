@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css?family=Audiowide|Iceland" rel="stylesheet">
+<!-- WebVfx does not recognise Google web fonts in "<link>", so make sure you also have the font downloaded on your computer. -->
+<title>Gauge</title>
+<style>
+/* LEDs */
+.led_box	{height: 30px; width: 75px; margin: 10px 0; float: left;}
+.led		{margin: 0 auto; width: 24px; height: 24px; background-color: #F00; border-radius: 50%;}
+#led_red.led_red_on			{background-color: #F00;    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 12px;}
+#led_yellow.led_yellow_on	{background-color: #FF0;    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0                 0 2px 12px;}
+#led_blue.led_blue_on		{background-color: #24E0FF; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006    0 -1px 9px, #3F8CFF              0 2px 14px;}	
+#led_green.led_green_on		{background-color: #ABFF00; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00              0 2px 12px;}
+
+#led_red 					{background-color: #800;    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;}
+#led_yellow 				{background-color: #880;    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0                 0 2px 0;}
+#led_blue					{background-color: #007088; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006    0 -1px 9px, #3F8CFF              0 2px 0;}	
+#led_green					{background-color: #378800; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00              0 2px 0;}
+</style>
+<body data-control="20:30">
+	<h2>https://canvas-gauges.com/</h1>
+	<canvas id="gauge"></canvas>
+	<div>
+		<div class="led_box"><div id="led_green"  class="led led_green_on"	></div></div>
+		<div class="led_box"><div id="led_blue"   class="led"  				></div></div>
+		<div class="led_box"><div id="led_yellow" class="led"				></div></div>
+		<div class="led_box"><div id="led_red"    class="led"				></div></div>
+	</div>
+</body>
+
+<script>
+/*
+	The "repeat" String method is used in the Gauge javascript. However, it was
+	only defined in the ECMA-262 6th Edition (June 2015) specification. The
+	version of ECMAScript used by MLT-Shotcut does not have this method, so we
+	create one.
+*/
+	if (typeof String.prototype.repeat == 'undefined') {
+		String.prototype.repeat = function(n){
+			var x = this;
+			return Array(n+1).join(x);
+		};
+	}
+//	alert("+".repeat(4));
+</script>
+
+<!-- <script src="http://cdn.rawgit.com/Mikhus/canvas-gauges/gh-pages/download/2.1.4/all/gauge.min.js"></script> NOT WITH MLT-SHOTCUT -->
+<script src="gauge.min.js"></script>
+<script src="WebVfx.js"></script>
+<script>
+
+//	Create the gauge on the canvas
+
+		old_colour = "green";
+		leds = {
+			green  : document.getElementById("led_green" ).classList ,
+			blue   : document.getElementById("led_blue"  ).classList ,
+			yellow : document.getElementById("led_yellow").classList ,
+			red    : document.getElementById("led_red"   ).classList 
+		};
+		gauge = new RadialGauge({
+			renderTo         : 'gauge',
+			width            : 300,
+			height           : 300,
+			units            : "Radiation (Bq)",
+			value            : 0,
+			minValue         : 0,
+			startAngle       : 90,
+			ticksAngle       : 180,
+			valueBox         : true,
+			valueInt         : 2,
+			valueDec         : 1,
+			maxValue         : 100,
+			majorTicks       : ["0", "20", "40", "60", "80", "100"],
+			minorTicks       : 2,
+			strokeTicks      : true,
+			highlights       : [
+				{"from":  0, "to":  15, "color": "rgba(100, 255, 100, .20)"},
+				{"from": 15, "to":  60, "color": "rgba(100, 100, 255, .20)"},
+				{"from": 60, "to":  80, "color": "rgba(220, 200,   0, .75)"},
+				{"from": 80, "to": 100, "color": "rgba(200,  50,  50, .75)"}
+			],
+			colorPlate       : "#ddd",
+			borderShadowWidth: 3,
+			borders          : false,
+			needleType       : "arrow",
+			needleWidth      : 5,
+			needleCircleSize : 2,
+			needleCircleOuter: true,
+			needleCircleInner: false,
+			animationDuration: 1500,
+			animationRule    : "linear"
+		}).draw();
+
+//	Create the animation function called by Elusien's WebVfx Framework
+
+function animate_gauge(time, browser, frame_number, frame_rate){
+// Update every 50th frame in the browser and every frame in Shotcut.
+	if (!browser || ((frame_number % 50) === 0)){
+		var value  = (Math.abs(Math.sin(time*Math.PI*2.3)) * 99).toFixed(1);
+		gauge.value = value;	// update the canvas (needle and value)
+
+//	Now decide which LEDs to update.
+
+		var colour  = "red";
+		if (value < 80) { colour = "yellow";}
+		if (value < 60) { colour = "blue"  ;}
+		if (value < 15) { colour = "green" ;}
+		if (colour == old_colour) {return;}
+		leds[old_colour].remove("led_" + old_colour + "_on");
+		old_colour = colour;
+		leds[old_colour].add   ("led_" + old_colour + "_on");
+  
+// Update the declarative chart...
+//		document.getElementById("gauge").setAttribute("data-value", value);		
+	}
+}
+
+	webvfx_add_to_frame = [animate_gauge];	// Tell the framework to call the animation function.
+
+</script>
+</html>

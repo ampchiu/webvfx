@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset="utf-8">
+	<title>Title</title>
+	<style>
+		body, body *    {-webkit-box-sizing: border-box; box-sizing: border-box; margin: 0;}
+		
+		#screen	{width: 100vw; height: 100vh; position: relative; border: solid 1px #000;}
+		table   {width: 98vw; height: 98vh;
+                 margin: 0 auto;
+				 background-color: #fff;
+				 position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto;
+				 border-collapse: collapse;
+				 overflow: hidden;
+				}
+		td 		{border: dashed 1px #fff; /* same color '#111' as background-color above */
+		   		 position: relative;
+		   		 text-align: center; vertical-align: middle; font: 32px 'Arial'; color: #000;
+ 		   		 margin: 100px 0 0;
+		   		 border-bottom: 2px solid #ccc;
+		   		}
+		div		{ width: 100%;}
+		tr:nth-child(1)  td	{color: #24a8e6;}
+		tr:nth-child(2)  td	{color: #a5cb21;}
+		tr:nth-child(3)  td	{color: #b10e81;}
+		tr:nth-child(4)  td {color: #8d6a00;}
+		tr:nth-child(5)  td	{color: #dd3f0f;}
+		tr:nth-child(6)  td	{color: #ddb40f;}
+		tr:nth-child(7)  td	{color: #348c04;}
+		tr:nth-child(8)  td	{color: #00ffff;}
+		tr:nth-child(9)  td	{color: #ffcc00;}
+		tr:nth-child(10) td	{color: #ff00cc;}
+		tr:nth-child(11) td	{color: #ff0000;}
+		tr:nth-child(12) td	{color: #00ff00;}
+		tr:nth-child(13) td	{color: #0000ff;}
+				
+/*		#screen, table, tr	{border: solid 1px red;}	/* DEBUG - to show the borders */
+
+	</style>
+</head>
+<body data-control='30:30'>
+	<div id='screen'>
+		<table>
+			<tr><td class='webvfx' data-textflow ='{start: 0.0 , end: 0.08, begin: hidden, finish: visible, ease: easeInOutSine, type: 0, 0%: flow,  40%: wait, 60%: flow}'><b>Type 0<br>textflow</b></tr>
+			<tr><td class='webvfx' data-textflow ='{start: 0.08, end: 0.16, begin: hidden, finish: visible, ease: easeInOutSine, type: 1, 0%: flow, 100%: wait}'><b>Type 1</b> textflow</tr>
+			<tr><td class='webvfx' data-textflow ='{start: 0.16, end: 0.24, begin: hidden, finish: visible, ease: easeInOutSine, type: 2, 0%: flow, 100%: wait}'><b>Type 2</b> textflow</tr>
+			<tr><td class='webvfx' data-textflow ='{start: 0.24, end: 0.32, begin: hidden, finish: visible, ease: easeInOutSine, type: 3, 0%: flow, 100%: wait}'><b>Type 3</b> textflow</tr>
+			<tr><td class='webvfx' data-textflow ='{start: 0.32, end: 0.40, begin: hidden, finish: visible, ease: easeInOutSine, type: 4, 0%: flow, 100%: wait}'><b>Type 4</b> textflow</tr>
+			<tr><td class='webvfx' data-textflow ='{start: 0.40, end: 0.48, begin: hidden, finish: visible, ease: easeInOutSine, type: 5, 0%: flow, 100%: wait}'><b>Type 5</b> textflow</tr>
+			<tr><td class='webvfx' data-textflow ='{start: 0.48, end: 0.56, begin: hidden, finish: visible, ease: easeInOutSine, type: 6, 0%: flow, 100%: wait}'><b>Type 6</b> textflow</tr>
+			<tr><td class='webvfx' data-textflow ='{start: 0.56, end: 0.64, begin: hidden, finish: visible, ease: easeInOutSine, type: 7, 0%: flow, 100%: wait}'><b>Type 7</b> textflow</tr>
+			<tr><td class='webvfx' data-textflow ='{start: 0.64, end: 0.72, begin: hidden, finish: visible, ease: easeInOutSine, type: 8, 0%: flow, 100%: wait}'><b>Type 8</b> textflow</tr>
+			<tr><td class='webvfx' data-textflow ='{start: 0.72, end: 0.80, begin: hidden, finish: visible, ease: easeInOutSine, type: 9, 0%: flow, 100%: wait}'><b>Type 9</b> textflow</tr>
+			<tr><td class='webvfx' data-textflow ='{start: 0.80, end: 0.88, begin: hidden, finish: visible, ease: easeInOutSine, type: 10, 0%: flow, 100%: wait}'><b>Type 10</b> textflow</tr>
+			<tr><td class='webvfx' data-textflow ='{start: 0.88, end: 0.96, begin: hidden, finish: visible, ease: easeInOutSine, type: 11, 0%: flow, 100%: wait}'><b>Type 11</b> textflow</tr>
+		</table>
+	</div>
+</body>
+<script src='./webvfx.js'></script>
+</html>
