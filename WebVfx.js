@@ -130,7 +130,8 @@
 		niters      : 0,
 		delay       : 0,
 		frame_number: 0,
-		frame_length: 0
+		frame_length: 0,
+        frame_busy  : 0
 	};
 	
 	function Easing_Funs(){
@@ -3824,7 +3825,7 @@ console.log('format_ntypewriter_data(ntypewriters[nt], nt_params[nt]);');
 				
 
         var producer = new Producer(params);
-        
+
 /*
         ==============================================================================================================
         Description
@@ -3852,9 +3853,12 @@ console.log('format_ntypewriter_data(ntypewriters[nt], nt_params[nt]);');
                             var timeout_loop = function(){
                                 setTimeout(function(){
                                     var time = Elusien.iter / Elusien.niters;
-                                    webvfx.renderRequested.prod.render(time);
-                                    if (Elusien.iter++ < (Elusien.niters - 1))  timeout_loop();
-                                }, Elusien.delay);
+                                    if (Elusien.frame_busy==0){
+                                        webvfx.renderRequested.prod.render(time);
+                                        Elusien.iter++
+                                    }
+                                    if (Elusien.iter < (Elusien.niters ))  timeout_loop();
+                                }, Elusien.delay/5);
                             };  
                             timeout_loop(); /* call the routine once, then it calls itself recursively */           
                         },
