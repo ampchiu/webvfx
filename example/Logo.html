@@ -43,7 +43,15 @@
 			-webkit-backface-visibility: hidden;			/* also ignored by MLT-Shotcut - fix by javascript */
     }
 </style>
-<script src='./webvfx.js'></script>
+<script src="../WebVfx.js"></script>
+
+<script>
+function syncframe(time, browser, frame_number, frame_rate) {
+    Elusien.frame_busy=1
+    console.log(frame_number,Elusien.niters)
+}
+</script>
+
 <script>
 	function fix_backface_visibility(time, browser, framen_number, frame_rate) {
 /*
@@ -62,7 +70,7 @@
 			back_style.visibility  = 'visible';	
 		}
 	}
-	webvfx_add_to_frame = [fix_backface_visibility];
+	webvfx_add_to_frame = [fix_backface_visibility,syncframe];
 </script>
 
 </head>
