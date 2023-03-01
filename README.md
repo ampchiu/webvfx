@@ -1,6 +1,9 @@
 # WebVfx
 
 ## History
+### 0.0.4
+add alpha regenerater
+
 ### 0.0.3
 Correct typo.
 Modify all of Elusien's example to produce demo video.
